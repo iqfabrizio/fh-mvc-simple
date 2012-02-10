@@ -1,0 +1,80 @@
+<!--
+This tutorial focuses on how to use MVC pattern to create a simple, library free Feedhenry App.
+-->
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<script type="text/javascript" src="./app/models/user.js"></script>
+		<script type="text/javascript" src="./app/controllers/userAuth.js"></script>
+		<script>
+			/**
+			 * Simple View Manager: hide last view and Load next view
+			 */
+			var lastView = null;
+			function changeView(viewId) {
+				// get next view through page id
+				var nextView = document.getElementById(viewId);
+				if(nextView === null) {
+					console.log("Could not find view with ID:" + viewId);
+					return;
+				}
+				if(lastView != null) {
+					//hide last view
+					lastView.className=lastView.className.replace(/(?:^|\s)active(?!\S)/, "");
+				}
+				
+				
+				// display next view
+				nextView.className += " active";
+				// view has been loaded
+				lastView = nextView;
+				
+			}
+		</script>
+		
+		<script>
+			/**
+			 * once window is loaded, View Manager will load first view.
+			 */
+			window.addEventListener("load",function(){
+				changeView("mainPage");
+			},false);
+		</script>
+		<style>
+			/**
+			 * pages are invisible by default.
+			 */
+			.page {
+				display: none;
+			}
+			/**
+			 * 	pages are visible once activated
+			 */
+			.page.active {
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="page" id="mainPage">
+			<div style="text-align:center">
+				<h1>Welcome,Please login:</h1>
+				<p>
+					<label for="username">Username:</label><input type="text" id="username" placeholder="UserName"/>
+				</p>
+				<p>
+					<label for="password">Password:</label><input type="password" id="password" placeholder="Password"/>
+				</p>
+				<p>
+					<input type="button" value="Login" onclick="userAuth.login()"/>
+				</p>
+			</div>
+		</div>
+		<div class="page" id="logged">
+			<h1>Welcome to Login</h1>
+			<h3>Your Name is:<span id="name"></span></h3>
+			<input type="button" value="logout" onclick="userAuth.logout()"/>
+		</div>
+		
+	</body>
+</html>
