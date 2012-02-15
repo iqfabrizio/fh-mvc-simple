@@ -1,5 +1,5 @@
 <!--
-This tutorial focuses on how to use MVC pattern to create a simple, library free Feedhenry App.
+This tutorial focuses on how to use MVC pattern to create a simple Feedhenry App
 -->
 <!DOCTYPE HTML>
 <html>
@@ -9,35 +9,7 @@ This tutorial focuses on how to use MVC pattern to create a simple, library free
 		<script type="text/javascript" src="./js/viewutil.js"></script>
 		<script type="text/javascript" src="./app/models/user.js"></script>
 		<script type="text/javascript" src="./app/controllers/userAuth.js"></script>
-		<script>
-			/**
-			 * once window is loaded, View Manager will load first view.
-			 */
-			$(document).ready(function(){
-				changeView("mainPage");
-			});
-		</script>
 	</head>
 	<body>
-		<div class="page" id="mainPage">
-			<div style="text-align:center">
-				<h1>Welcome,Please login:</h1>
-				<p>
-					<label for="username">Username:</label><input type="text" id="username" placeholder="UserName"/>
-				</p>
-				<p>
-					<label for="password">Password:</label><input type="password" id="password" placeholder="Password"/>
-				</p>
-				<p>
-					<input type="button" value="Login" onclick="userAuth.login()"/>
-				</p>
-			</div>
-		</div>
-		<div class="page" id="logged">
-			<h1>Welcome to Login</h1>
-			<h3>Your Name is:<span id="name"></span></h3>
-			<input type="button" value="logout" onclick="userAuth.logout()"/>
-		</div>
-		
 	</body>
 </html>
