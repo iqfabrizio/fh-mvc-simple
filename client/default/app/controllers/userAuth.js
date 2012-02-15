@@ -1,23 +1,24 @@
-var userAuth={
-	login:function(){
-		if (users==undefined){
+var userAuth = {
+	login : function() {
+		if(users == undefined) {
 			return;
 		}
-		var username, pwd, usernameElement, passwordElement; //define variables
-		usernameElement=document.getElementById("username");
-		passwordElement=document.getElementById("password");
-		username=usernameElement.value;
-		pwd=passwordElement.value;
-		for (var i=0;i<users.length;i++){
-			var user=users[i];
-			if (user.username===username && user.password===pwd){
-				document.getElementById("name").innerHTML=username;
+		var username, pwd, usernameElement, passwordElement;
+		//define variables
+		usernameElement = document.getElementById("username");
+		passwordElement = document.getElementById("password");
+		username = usernameElement.value;
+		pwd = passwordElement.value;
+		users.userValidate(username, pwd, function(res) {
+			if(res === true) {
+				document.getElementById("name").innerHTML = username;
 				return changeView("logged");
+			} else {
+				alert("Invalid username or password");
 			}
-		}
-		alert("Invalid username or password");
+		});
 	},
-	logout:function(){
+	logout : function() {
 		changeView("mainPage");
 	}
 }

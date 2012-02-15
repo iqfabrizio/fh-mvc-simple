@@ -4,56 +4,19 @@ This tutorial focuses on how to use MVC pattern to create a simple, library free
 <!DOCTYPE HTML>
 <html>
 	<head>
+		<link rel="stylesheet" type="text/css" href="./css/basic.css" />
+		<script type="text/javascript" src="./js/jquery.js"></script>
+		<script type="text/javascript" src="./js/viewutil.js"></script>
 		<script type="text/javascript" src="./app/models/user.js"></script>
 		<script type="text/javascript" src="./app/controllers/userAuth.js"></script>
 		<script>
 			/**
-			 * Simple View Manager: hide last view and Load next view
-			 */
-			var lastView = null;
-			function changeView(viewId) {
-				// get next view through page id
-				var nextView = document.getElementById(viewId);
-				if(nextView === null) {
-					console.log("Could not find view with ID:" + viewId);
-					return;
-				}
-				if(lastView != null) {
-					//hide last view
-					lastView.className=lastView.className.replace(/(?:^|\s)active(?!\S)/, "");
-				}
-				
-				
-				// display next view
-				nextView.className += " active";
-				// view has been loaded
-				lastView = nextView;
-				
-			}
-		</script>
-		
-		<script>
-			/**
 			 * once window is loaded, View Manager will load first view.
 			 */
-			window.addEventListener("load",function(){
+			$(document).ready(function(){
 				changeView("mainPage");
-			},false);
+			});
 		</script>
-		<style>
-			/**
-			 * pages are invisible by default.
-			 */
-			.page {
-				display: none;
-			}
-			/**
-			 * 	pages are visible once activated
-			 */
-			.page.active {
-				display: block;
-			}
-		</style>
 	</head>
 	<body>
 		<div class="page" id="mainPage">

@@ -1,0 +1,12 @@
+/**
+ * pages are invisible by default.
+ */
+.page {
+	display: none;
+}
+/**
+ * 	pages are visible once activated
+ */
+.page.active {
+	display: block;
+}
