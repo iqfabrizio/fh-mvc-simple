@@ -9,6 +9,8 @@ This tutorial focuses on how to use MVC pattern to create a simple, library free
 		<script type="text/javascript" src="./js/viewutil.js"></script>
 		<script type="text/javascript" src="./app/models/user.js"></script>
 		<script type="text/javascript" src="./app/controllers/userAuth.js"></script>
+		<script type="text/javascript" src="./app/controllers/map.js"></script>
+		<
 		<script>
 			$(document).ready(function(){
 				changeView("mainPage");
@@ -32,7 +34,7 @@ This tutorial focuses on how to use MVC pattern to create a simple, library free
 					<label for="password">Password:</label><input type="password" id="password" placeholder="Password"/>
 				</p>
 				<p>
-					<input type="button" value="Login" id="loginBtn" disabled="disabled" onclick="userAuth.login()"/>
+					<input type="button" value="Login" id="loginBtn" disabled="disabled"  onclick="userAuth.login()"/>
 				</p>
 				<p id="info" ></p>
 			</div>
@@ -40,8 +42,18 @@ This tutorial focuses on how to use MVC pattern to create a simple, library free
 		<div class="page" id="logged">
 			<h1>Welcome to Login</h1>
 			<h3>Your Name is:<span id="name"></span></h3>
+			<button onclick="map.pinCurrentLocation()">Pin Location</button>
 			<input type="button" value="logout" onclick="userAuth.logout()"/>
 		</div>
-		
+		<div class="page" id="map">
+			<h1>Map</h1>
+			<div id="map_div">
+				
+			</div>
+			<p>Your Location:<span id="lat"></span><span id="long"></span></p>
+			<p>Status:<span id="status"></span></p>
+			<button onclick="map.back()">Back</button>
+			<input type="button" value="logout" onclick="userAuth.logout()"/>
+		</div>
 	</body>
 </html>
