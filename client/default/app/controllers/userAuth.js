@@ -9,7 +9,7 @@ var userAuth = {
 		passwordElement = document.getElementById("password");
 		username = usernameElement.value;
 		pwd = passwordElement.value;
-		users.userValidate(username, pwd, function(res) {
+		users.userValidate(username, pwd, function(res) { //users model does not exist currently
 			if(res === true) {
 				document.getElementById("name").innerHTML = username;
 				return changeView("logged");
