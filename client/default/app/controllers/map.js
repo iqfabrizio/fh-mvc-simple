@@ -24,7 +24,7 @@ var map = {
 				});
 
 				// To add the marker to the map, call setMap();
-				marker.setMap(map);
+				marker.setMap(map.map);
 			}, function(msg) {
 				console.log(msg);
 			});
