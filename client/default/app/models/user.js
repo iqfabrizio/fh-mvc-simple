@@ -34,18 +34,5 @@ var users = {
 				cb(false);
 			}
 		}, 100);
-	},
-	getUserList : function(callback) {
-		var retArr = [];
-		var users = this.data;
-		setTimeout(function() {
-			for(var i = 0; i < users.length; i++) {
-				var user = users[i];
-				retArr.push(user.username);
-			}
-			if (callback){
-				callback(retArr);
-			}
-		}, 100)
 	}
 };
