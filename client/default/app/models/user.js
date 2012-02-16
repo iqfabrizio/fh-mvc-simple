@@ -9,6 +9,7 @@ var users = {
 	}],
 	isDataLoaded : false,
 	load : function(callback) {
+		//load data to model. Using mock up data. Callback directly.
 		if(callback) {
 			callback()
 		}
