@@ -14,7 +14,7 @@ var map = {
 				target : '#map_div',
 				lat : res.lat,
 				lon : res.lon,
-				zoom : 15
+				zoom : 13
 			}, function(map) {
 				mapView.find("#status").html("Done");
 				var myLatLng=new google.maps.LatLng(res.lat,res.lon);
