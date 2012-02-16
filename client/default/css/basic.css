@@ -10,8 +10,3 @@
 .page.active {
 	display: block;
 }
-
-#map_div{
-	width:100%;
-	height:280px;
-}
