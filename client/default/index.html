@@ -17,7 +17,7 @@ This tutorial focuses on how to use MVC pattern to create a simple, library free
 					changeView("mainPage");
 					var mainPageView = getView("mainPage");
 					mainPageView.find("#info").html("Loading User Data....");
-					users.load(function() {
+					users.load(function() { //users model does not exist at the moment
 						mainPageView.find("#info").html("User Data Loaded!");
 						mainPageView.find("#loginBtn").removeAttr("disabled");
 					});
@@ -27,9 +27,9 @@ This tutorial focuses on how to use MVC pattern to create a simple, library free
 		</script>
 	</head>
 	<body>
+		<!-- View place holders -->
 		<div class="page" id="mainPage"></div>
 		<div class="page" id="logged"></div>
-		<div class="page" id="map"></div>
-		<div class="page" id="userList"></div>
+		
 	</body>
 </html>
