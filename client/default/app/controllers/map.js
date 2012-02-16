@@ -1,6 +1,8 @@
 var map = {
 	pinCurrentLocation : function() {
+		changeView("map");
 		var mapView=getView("map");
+		
 		mapView.find("#status").html("Retriving your location");
 		$fh.geo({
 			interval : 0
