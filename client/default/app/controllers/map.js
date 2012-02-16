@@ -19,7 +19,7 @@ var map = {
 				mapView.find("#status").html("Done");
 				var myLatLng=new google.maps.LatLng(res.lat,res.lon);
 				var marker = new google.maps.Marker({
-					position : myLatlng,
+					position : myLatLng,
 					title : "You are here!"
 				});
 
