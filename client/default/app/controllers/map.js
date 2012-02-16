@@ -8,8 +8,8 @@ var map = {
 			interval : 0
 		}, function(res) {
 			mapView.find("#status").html("Loading map...");
-			mapView.find("#lat").text("res.lat");
-			mapView.find("#long").text("res.lon");
+			mapView.find("#lat").text(res.lat);
+			mapView.find("#long").text(res.lon);
 			$fh.map({
 				target : '#map_div',
 				lat : res.lat,
