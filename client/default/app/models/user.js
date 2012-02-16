@@ -26,6 +26,7 @@ var users = {
 				if(user.username === username && user.password === password) {
 					if(cb != undefined) {
 						cb(true);
+						return;
 					}
 				}
 			}

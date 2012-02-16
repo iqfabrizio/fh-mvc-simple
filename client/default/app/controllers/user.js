@@ -6,7 +6,7 @@ var user={
 				var user=arr[i];
 				var html="<li>{0}</li>";
 				html=html.replace("{0}",user);
-				getView("userList").find("users").append(html);
+				getView("userList").find("#users").append(html);
 			}
 			changeView("userList");
 		});
