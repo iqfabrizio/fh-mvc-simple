@@ -2,12 +2,12 @@
  * User model.
  */
 
-var users = {
+var users = { //model uses mockup data
 	data : [{
 		username:"Joe",
 		password:"12345"
 	}],
-	isDataLoaded : false,
+	isDataLoaded : true,
 	load : function(callback) {
 		//load data to model. Using mock up data. Callback directly.
 		if(callback) {
