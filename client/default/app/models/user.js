@@ -3,19 +3,15 @@
  */
 
 var users = {
-	data : [],
+	data : [{
+		username:"Joe",
+		password:"12345"
+	}],
 	isDataLoaded : false,
 	load : function(callback) {
-		var that = this;
-		$fh.act({
-			act : "getUsers"
-		}, function(res) {
-			that.data = res.data;
-			that.isDataLoaded = true;
-			if(callback) {
-				callback()
-			}
-		});
+		if(callback) {
+			callback()
+		}
 	},
 	userValidate : function(username, password, cb) {
 		var users = this.data;
@@ -34,18 +30,5 @@ var users = {
 				cb(false);
 			}
 		}, 100);
-	},
-	getUserList : function(callback) {
-		var retArr = [];
-		var users = this.data;
-		setTimeout(function() {
-			for(var i = 0; i < users.length; i++) {
-				var user = users[i];
-				retArr.push(user.username);
-			}
-			if (callback){
-				callback(retArr);
-			}
-		}, 100)
 	}
 };
