@@ -15,6 +15,7 @@ This tutorial focuses on how to use MVC pattern to create a simple, library free
 		<script>
 			$(document).ready(function() {
 				importViews(function() {
+					console.log("app starting...");
 					changeView("mainPage");
 					var mainPageView = getView("mainPage");
 					mainPageView.find("#info").html("Loading User Data....");
@@ -29,6 +30,7 @@ This tutorial focuses on how to use MVC pattern to create a simple, library free
 	</head>
 	<body>
 		<!-- view place holders -->
+		<div data-role="page"></div>
 		<div data-role="page" class="page" id="mainPage"></div>
 		<div data-role="page" class="page" id="logged"></div>
 		<div data-role="page" class="page" id="map"></div>
