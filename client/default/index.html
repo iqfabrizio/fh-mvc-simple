@@ -13,8 +13,8 @@ This tutorial focuses on how to use MVC pattern to create a simple, library free
 		<script type="text/javascript" src="./app/controllers/user.js"></script>
 		<script>
 			$(document).ready(function() {
-				importViews(function() {
-					changeView("mainPage");
+				importViews(function() { //import all views. callback when finished
+					changeView("mainPage"); // go to the first view: mainPage
 					var mainPageView = getView("mainPage");
 				});
 			});
