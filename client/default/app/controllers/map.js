@@ -1,8 +1,8 @@
 var map = {
 	pinCurrentLocation : function() {
 		changeView("map");
-		var mapView=getView("map");
-		
+		var mapView = getView("map");
+
 		mapView.find("#status").html("Retriving your location");
 		$fh.geo({
 			interval : 0
@@ -14,15 +14,23 @@ var map = {
 				target : '#map_div',
 				lat : res.lat,
 				lon : res.lon,
-				zoom : 9
+				zoom : 15
 			}, function(map) {
 				mapView.find("#status").html("Done");
+				var myLatLng=new google.maps.LatLng(res.lat,res.lon);
+				var marker = new google.maps.Marker({
+					position : myLatlng,
+					title : "You are here!"
+				});
+
+				// To add the marker to the map, call setMap();
+				marker.setMap(map);
 			}, function(msg) {
 				console.log(msg);
 			});
 		})
 	},
-	back:function(){
+	back : function() {
 		changeView("logged");
 	}
 };
